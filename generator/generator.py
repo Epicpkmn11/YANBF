@@ -256,7 +256,7 @@ class Generator():
     def makebanner(self):
         bannertoolarg = f'bannertool makebanner -i "data/banner.png" -a "{self.sound}" -o "data/banner.bin"'
         self.message(f"Using arguments: {bannertoolarg}")
-        bannertoolrun = subprocess.run(f'{self.cmdarg}{bannertoolarg}', shell=True, capture_output=True, universal_newlines=True)
+        bannertoolrun = subprocess.run(f'{self.cmdarg}{bannertoolarg}', shell=True, capture_output=True, universal_newlines=True, encoding="utf-8")
         if bannertoolrun.returncode != 0:
             self.message(f"{bannertoolrun.stdout}\n{bannertoolrun.stderr}")
             exit()
