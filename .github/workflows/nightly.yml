@@ -2,11 +2,11 @@ name: Build nightly
 
 on:
   push:
-    branches: ["main"]
+    branches: ["*"]
     paths-ignore:
       - 'README.md'
   pull_request:
-    branches: ["main"]
+    branches: ["*"]
     paths-ignore:
       - 'README.md'
   workflow_dispatch:
