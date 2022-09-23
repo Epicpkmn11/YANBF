@@ -174,7 +174,7 @@ class Generator():
                 bannertoolarg += f'-ks "{title["kor"][0]}" -kl "{title["kor"][0]}" -kp "{title["kor"][1]}" '
 
         bannertoolarg += '-o "data/output.smdh"'
-        bannertoolrun = subprocess.run(bannertoolarg, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
+        bannertoolrun = subprocess.run(bannertoolarg, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True, encoding="utf-8")
         if bannertoolrun.returncode != 0:
             self.message(f"{bannertoolrun.stdout}\n{bannertoolrun.stderr}")
             exit()
